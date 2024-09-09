@@ -111,3 +111,20 @@ form.button_to {
 .text-danger {
   color: #f38792 !important;
 }
+
+.inventory {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.inventory-table {
+  border-style: solid;
+  border-width: thin;
+  border-color: rgb(6, 97, 26);
+  width: 90%;
+}
+
+.table-info {
+  outline: rgb(6, 97, 26);
+  margin: 0;
+}

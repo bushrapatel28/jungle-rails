@@ -1,2 +1,25 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<h1 class="inventory">General Stats</h1>
+
+<div class="inventory-table">
+  <table class="table table-info">
+    <thead>
+      <tr>
+        <th scope="col">Stock</th>
+        <th scope="col">Stock Count</th>
+        <th scope="col">Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row"><h5>Products</h5></th>
+        <td><%= @product_count %></td>
+        <td><a href="admin/products" class="btn btn-success">Product Admin List</a></td>
+      </tr>
+      <tr>
+        <th scope="row"><h5>Categories</h5></th>
+        <td><%= @category_count %></td>
+        <td><a href="products#index" class="btn btn-success">Index</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
