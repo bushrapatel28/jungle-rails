@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'about/index'
+  # get 'users#new'
+  # get 'users#create'
+  # get 'about/index'
   namespace :admin do
     get 'categories/index'
     get 'categories/new'
@@ -26,6 +28,8 @@ Rails.application.routes.draw do
   end
   
   resources :about, only: [:index]
+  
+  resources :users, only: [:new, :create]
 
 
   # The priority is based upon order of creation: first created -> highest priority.
