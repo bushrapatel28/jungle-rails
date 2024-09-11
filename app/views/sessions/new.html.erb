@@ -7,5 +7,6 @@
     <section class="login-inputs"><h3>Email:</h3> <%= text_field_tag :email %></section>
     <section class="login-inputs"><h3>Password:</h3> <%= password_field_tag :password %></section>
     <section class="login-btn"><%= submit_tag "Login" %><section>
+    <section>Don't have an account? <%= link_to 'Sign Up', register_path %></section>
   <% end %>
 </article>

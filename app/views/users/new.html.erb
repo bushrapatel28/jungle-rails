@@ -11,5 +11,7 @@
     <section class="register-inputs"><h3>Password Confirmation:</h3> <%= form.password_field :password_confirmation %></section>
     <section class="register-btn"><%= form.submit "Register" %></section>
 
+    <section>Already registered? <%= link_to 'Login', login_path %></section>
   <% end %>
+
 </article>
