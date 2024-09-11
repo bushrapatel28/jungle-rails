@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  # get 'sessions/new'
+  # get 'sessions/create'
+  # get 'sessions/destroy'
   # get 'users#new'
   # get 'users#create'
   # get 'about/index'
@@ -28,8 +31,10 @@ Rails.application.routes.draw do
   end
   
   resources :about, only: [:index]
-  
+
   resources :users, only: [:new, :create]
+
+  resources :sessions, except: [:index, :edit, :update, :show]
 
 
   # The priority is based upon order of creation: first created -> highest priority.
