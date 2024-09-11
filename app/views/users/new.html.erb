@@ -1,11 +1,15 @@
-<h1>Signup!</h1>
+<header class="page-header">
+  <h1>Signup!</h1>
+</header>
 
-<%= form_for @user do |form| %>
+<article class="registration-form">
+  <%= form_for @user do |form| %>
 
-  Name: <%= form.text_field :name %>
-  Email: <%= form.text_field :email %>
-  Password: <%= form.password_field :password %>
-  Password Confirmation: <%= form.password_field :password_confirmation %>
-  <%= form.submit "Register" %>
+    <section class="register-inputs"><h3>Name:</h3> <%= form.text_field :name, placeholder: 'Enter your full name' %></section>
+    <section class="register-inputs"><h3>Email:</h3> <%= form.text_field :email, placeholder: 'example@example.com' %></section>
+    <section class="register-inputs"><h3>Password:</h3> <%= form.password_field :password %></section>
+    <section class="register-inputs"><h3>Password Confirmation:</h3> <%= form.password_field :password_confirmation %></section>
+    <section class="register-btn"><%= form.submit "Register" %></section>
 
-<% end %>
+  <% end %>
+</article>

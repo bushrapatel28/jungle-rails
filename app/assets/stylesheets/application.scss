@@ -135,3 +135,26 @@ form.button_to {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+.signed-in {
+  display: flex;
+  flex-direction: row;
+  color: rgba(255, 255, 255, 0.55);
+  align-items: center;
+}
+
+.nav-user {
+  font-family: "Montserrat";
+  color: #ffc107;
+  font-size: large;
+  font-weight: 500;
+  margin: 0;
+  padding: 6px;
+}
+
+.session-links {
+  border: #2c62b2d9 solid 3px;
+  border-radius: 15px;
+  margin: 3px;
+  padding: 4px;
+}

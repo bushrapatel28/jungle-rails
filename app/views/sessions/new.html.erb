@@ -1,9 +1,11 @@
-<h1>Login</h1>
+<header class="page-header">
+  <h1>Login</h1>
+</header>
 
-<%= form_tag :sessions do %>
-
-  Email: <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Login" %>
-
-<% end %>
+<article class="login-form">
+  <%= form_tag :sessions do %>
+    <section class="login-inputs"><h3>Email:</h3> <%= text_field_tag :email %></section>
+    <section class="login-inputs"><h3>Password:</h3> <%= password_field_tag :password %></section>
+    <section class="login-btn"><%= submit_tag "Login" %><section>
+  <% end %>
+</article>
