@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+
   describe 'Validations' do
+
     it 'should successfully register user with all four fields set' do
       @user = User.new(name: "John Doe", email: "johndoe@example.com", password: "Password", password_confirmation: "Password")
       @user.save
@@ -61,4 +63,44 @@ RSpec.describe User, type: :model do
     end
 
   end
+
+  describe '.authenticate_with_credentials' do
+    
+    it 'should login a user with registered email and password' do
+      @user = User.create(name: "Frank Black", email: "frank.black@example.com", password: "p@ssw0rd!", password_confirmation: "p@ssw0rd!")
+
+      @session_user = User.authenticate_with_credentials("frank.black@EXAMPLE.com", "p@ssw0rd!")
+      expect(@session_user).to eq(@user)
+    end
+    
+    it 'should not authenticate user with invalid email' do
+      @user = User.create(name: "Isabella Davis", email: "isabella.davis@example.com", password: "matching123", password_confirmation: "matching123")
+      
+      @session_user = User.authenticate_with_credentials("isabell.adavis@example.com", "matching123")
+      expect(@session_user).to be_nil
+    end
+    
+    it 'should not authenticate user with incorrect password' do
+      @user = User.create(name: "Henry Moore", email: "henry.moore@example.com", password: "password2024!", password_confirmation: "p@ssw0rd!")
+      
+      @session_user = User.authenticate_with_credentials("henry.moore@example.com", "password!")
+      expect(@session_user).to be_nil
+    end
+    
+    it 'should login a user with leading and trailing spaces in the email' do
+      @user = User.create(name: "Frank Black", email: "frank.black@example.com", password: "p@ssw0rd!", password_confirmation: "p@ssw0rd!")
+
+      @session_user = User.authenticate_with_credentials(" frank.black@example.com ", "p@ssw0rd!")
+      expect(@session_user).to eq(@user)
+    end
+
+    it 'should login a user with wrong case used in the email' do
+      @user = User.create(name: "Frank Black", email: "frank.black@EXAMPLE.com", password: "p@ssw0rd!", password_confirmation: "p@ssw0rd!")
+
+      @session_user = User.authenticate_with_credentials("fRank.black@example.COM", "p@ssw0rd!")
+      expect(@session_user).to eq(@user)
+    end
+
+  end
+
 end

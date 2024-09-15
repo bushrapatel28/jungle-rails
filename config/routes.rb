@@ -21,11 +21,9 @@ Rails.application.routes.draw do
   resources :about, only: [:index]
 
   resources :users, only: [:new, :create]
-
   get '/register', to: 'users#new', as: 'register'
 
   resources :sessions, except: [:index, :edit, :update, :show]
-
   get '/login', to: 'sessions#new', as: 'login'
   get '/logout', to: 'sessions#destroy', as: 'logout'
 

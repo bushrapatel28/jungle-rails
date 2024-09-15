@@ -4,6 +4,13 @@
 
 <article class="login-form">
   <%= form_tag :sessions do %>
+
+    <% if flash[:alert] %>
+      <div class="alert alert-danger">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
     <section class="login-inputs"><h3>Email:</h3> <%= text_field_tag :email %></section>
     <section class="login-inputs"><h3>Password:</h3> <%= password_field_tag :password %></section>
     <section class="login-btn"><%= submit_tag "Login" %><section>
