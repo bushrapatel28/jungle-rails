@@ -52,11 +52,14 @@ gem 'carrierwave'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
+  gem 'rspec-rails', '~> 5.1'
+  gem 'net-smtp', require: false
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'dotenv-rails'
-gem 'rspec-rails'
+# gem 'rspec-rails'
 end
+
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
