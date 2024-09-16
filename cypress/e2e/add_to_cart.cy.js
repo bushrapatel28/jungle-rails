@@ -1,4 +1,4 @@
-describe('Product Details Page', () => {
+describe('Add to Cart', () => {
   it('should visit root', () => {
     cy.visit('/')
   })
@@ -10,15 +10,16 @@ describe('Product Details Page', () => {
       .should('be.visible')
   })
 
-  it('should navigate to product detail page', () => {
+  it('should add product to cart', () => {
     cy.visit('/')
 
     cy.get(".products article")
       .first()
+      .contains("Add")
       .click()
 
-    cy.get(".products-show article")
-      .should('be.visible')
+    cy.get(".end-0")
+      .should("contain.text", "My Cart (1)")
   })
 
 })
