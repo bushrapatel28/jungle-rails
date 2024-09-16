@@ -10,11 +10,15 @@ describe('Home Page', () => {
       .should('be.visible')
   })
 
-  it('There is 2 products on the page', () => {
+  it('should navigate to product detail page', () => {
     cy.visit('/')
 
     cy.get(".products article")
-      .should('have.length', 2)
+      .first()
+      .click()
+
+    cy.get(".products-show article")
+      .should('be.visible')
   })
 
 })
